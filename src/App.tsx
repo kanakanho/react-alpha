@@ -11,7 +11,11 @@ export function App() {
             }
         };
 
+        // Add event listener
+        window.addEventListener("deviceorientation", handleOrientationEvent);
+
         return () => {
+            // Remove event listener
             window.removeEventListener("deviceorientation", handleOrientationEvent);
         };
     }, []);
